@@ -16,23 +16,10 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 2;
-}
-
-/* Background image after video */
-.bg-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('assets/bg_success.jpg') no-repeat center center;
-  background-size: cover;
   z-index: 1;
-  display: none; /* hidden initially */
 }
 
-/* Overlay */
+/* Overlay with background image */
 .overlay {
   position: fixed;
   top: 0;
@@ -45,9 +32,13 @@ html, body {
   align-items: center;
   text-align: center;
   color: white;
-  z-index: 3;
+  z-index: 2;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+
+  /* Fixed background image for mobile & desktop */
+  background: url('assets/bg_success.jpg') no-repeat center center;
+  background-size: cover;
 }
 
 .overlay.show {
@@ -61,7 +52,7 @@ html, body {
 
 /* Auth box */
 .auth-box {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6); /* keeps text readable */
   padding: 20px 30px;
   border-radius: 12px;
   min-width: 250px;
