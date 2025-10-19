@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3Q Jacket</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3Q Jacket — Authenticity</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Fullscreen Video -->
-  <video id="introVideo" class="intro-video" muted playsinline poster="assets/bg_success.jpg"></video>
+  <!-- Intro video (plays once) -->
+  <video id="introVideo" class="video-layer" muted playsinline>
+    <source src="assets/intro.mp4" type="video/mp4">
+  </video>
 
-  <!-- Overlay with background image -->
-  <div id="overlay" class="overlay">
-    <h1>Good news! Your item is 100% authentic.</h1>
+  <!-- Background video (looping) — hidden initially -->
+  <video id="bgVideo" class="video-layer hidden" muted loop playsinline poster="assets/bg_success.jpg">
+    <source src="assets/bg_video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Content overlay shown on top of background video -->
+  <div id="overlay" class="overlay hidden">
+    <h1 id="title">Good news! Your item is 100% authentic.</h1>
+
     <div class="auth-box">
       <div class="auth-row"><span class="label">Item:</span><span class="value">3Q Jacket</span></div>
       <div class="auth-row"><span class="label">Size:</span><span class="value">M</span></div>
       <div class="auth-row"><span class="label">UID:</span><span class="value">3QJKT-AB123456</span></div>
       <div class="auth-row"><span class="label">Owner:</span><span class="value">Ansh</span></div>
     </div>
-    <button id="doneBtn">Done</button>
+
+    <button id="doneBtn" class="btn">Done</button>
   </div>
 
   <script src="app.js"></script>
