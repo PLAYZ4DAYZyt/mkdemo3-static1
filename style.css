@@ -54,7 +54,7 @@ body { background: #111; color: #fff; }
 }
 .loading-text {
   position: relative;
-  top: 30px; /* increase to move down, decrease (or negative) to move up */
+  top: 40px; /* increase to move down, decrease (or negative) to move up */
 }
 /* small responsive fixes */
 @media (max-width: 480px) {
@@ -62,4 +62,5 @@ body { background: #111; color: #fff; }
   .mk-watermark { width: 70px; right: 10px; bottom: 12px; }
   .container { padding: 20px; max-width: none; }
 }
+
 
