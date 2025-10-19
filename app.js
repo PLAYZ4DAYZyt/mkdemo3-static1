@@ -1,12 +1,14 @@
 const video = document.getElementById('introVideo');
 const overlay = document.getElementById('overlay');
+const bgImage = document.getElementById('bgImage');
 const doneBtn = document.getElementById('doneBtn');
 
 // Set video source
 video.src = 'assets/intro.mp4';
 
-// Function to show overlay and animate rows
+// Function to show overlay and animate auth rows
 function showOverlay() {
+  bgImage.style.display = 'block'; // show background image
   overlay.classList.add('show');
 
   const rows = overlay.querySelectorAll('.auth-row');
@@ -18,7 +20,7 @@ function showOverlay() {
   });
 }
 
-// Attempt autoplay
+// Attempt autoplay for video
 video.play().catch(() => {
   document.body.addEventListener('click', () => {
     video.play().then(() => {
