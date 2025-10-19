@@ -30,25 +30,24 @@ html, body {
   align-items: center;
   text-align: center;
   color: white;
-  background-size: cover;
-  background-position: center;
   z-index: 2;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
-.overlay.show h1 {
+.overlay.show {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.overlay h1 {
+  margin: 0 0 20px;
+  font-size: 1.5em;
 }
 
 .auth-box {
-  background: rgba(0, 0, 0, 0.6); /* semi-transparent box */
+  background: rgba(0, 0, 0, 0.6);
   padding: 20px 30px;
   border-radius: 12px;
-  margin-top: 20px;
-  display: inline-block;
   min-width: 250px;
 }
 
@@ -63,14 +62,13 @@ html, body {
 
 .auth-row .label {
   font-weight: bold;
-  color: #fff;
 }
 
 .auth-row .value {
   color: #fff;
 }
 
-.overlay button {
+button {
   margin-top: 20px;
   padding: 12px 25px;
   font-size: 1em;
@@ -79,9 +77,8 @@ html, body {
   background-color: #fff;
   color: #000;
   border-radius: 5px;
-  transition: 0.3s;
 }
 
-.overlay button:hover {
+button:hover {
   background-color: #eee;
 }
