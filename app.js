@@ -5,9 +5,9 @@ const doneBtn = document.getElementById('doneBtn');
 // Set video source
 video.src = 'assets/intro.mp4';
 
-// Try autoplay (may fail on some mobile devices)
+// Attempt autoplay
 video.play().catch(() => {
-  // If autoplay fails, require user tap
+  // If autoplay fails (common on mobile), play on first tap
   document.body.addEventListener('click', () => {
     video.play();
   }, { once: true });
