@@ -56,11 +56,17 @@ body { background: #111; color: #fff; }
   position: relative;
   top: 40px; /* increase to move down, decrease (or negative) to move up */
 }
+@media (max-width: 768px) {
+    .text-container {
+        padding-top: 20vh; /* push text lower on smaller screens */
+    }
+}
 /* small responsive fixes */
 @media (max-width: 480px) {
   .video-wrapper, .background-image { width: 100vw; height: 100vh; }
   .mk-watermark { width: 70px; right: 10px; bottom: 12px; }
   .container { padding: 20px; max-width: none; }
 }
+
 
 
