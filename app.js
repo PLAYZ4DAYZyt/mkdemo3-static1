@@ -13,16 +13,16 @@ video.play().catch(() => {
   }, { once: true });
 });
 
-// Animate overlay and list items sequentially
+// Animate overlay and auth rows sequentially
 video.onended = () => {
   overlay.style.backgroundImage = "url('assets/bg_success.jpg')";
   overlay.classList.add('show');
 
-  const items = overlay.querySelectorAll('li');
-  items.forEach((item, index) => {
+  const rows = overlay.querySelectorAll('.auth-row');
+  rows.forEach((row, index) => {
     setTimeout(() => {
-      item.style.opacity = 1;
-      item.style.transform = 'translateY(0)';
+      row.style.opacity = 1;
+      row.style.transform = 'translateY(0)';
     }, 300 * (index + 1)); // stagger animation by 0.3s
   });
 };
