@@ -1,4 +1,3 @@
-// Select elements
 const video = document.getElementById('introVideo');
 const overlay = document.getElementById('overlay');
 const doneBtn = document.getElementById('doneBtn');
@@ -6,7 +5,15 @@ const doneBtn = document.getElementById('doneBtn');
 // Set video source
 video.src = 'assets/intro.mp4';
 
-// When video ends, show overlay
+// Try autoplay (may fail on some mobile devices)
+video.play().catch(() => {
+  // If autoplay fails, require user tap
+  document.body.addEventListener('click', () => {
+    video.play();
+  }, { once: true });
+});
+
+// Show overlay when video ends
 video.onended = () => {
   overlay.style.backgroundImage = "url('assets/bg_success.jpg')";
   overlay.classList.add('show');
