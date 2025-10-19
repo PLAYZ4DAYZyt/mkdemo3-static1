@@ -37,25 +37,31 @@ html, body {
   transition: opacity 1.5s ease-in-out;
 }
 
-.overlay h1, .overlay p {
+.overlay h1, .overlay li {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.overlay.show h1, .overlay.show p {
+.overlay.show h1 {
   opacity: 1;
   transform: translateY(0);
 }
 
-.overlay h1 {
-  font-size: 2em;
+.overlay.show li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#subtitle {
+  list-style: none;
+  padding: 0;
   margin: 0.5em 0;
 }
 
-.overlay p {
+#subtitle li {
   font-size: 1.2em;
-  margin: 0.5em 0;
+  margin: 0.3em 0;
 }
 
 .overlay button {

@@ -13,11 +13,18 @@ video.play().catch(() => {
   }, { once: true });
 });
 
-// Show overlay when video ends
+// Animate overlay and list items sequentially
 video.onended = () => {
   overlay.style.backgroundImage = "url('assets/bg_success.jpg')";
   overlay.classList.add('show');
-  overlay.style.opacity = 1;
+
+  const items = overlay.querySelectorAll('li');
+  items.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.opacity = 1;
+      item.style.transform = 'translateY(0)';
+    }, 300 * (index + 1)); // stagger animation by 0.3s
+  });
 };
 
 // Done button redirects to Moose Knuckles website
