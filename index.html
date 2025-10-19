@@ -1,37 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>3Q Jacket — Authenticity</title>
+  <meta name="backend-version" content="1.2.0.0" />
+  <meta name="frontend-version" content="1.1" />
+  <title>Experience — Moose Knuckles (mknfc)</title>
+
+  <!-- Official MooseKnuckles styles (keeps the authentic look) -->
+  <link rel="stylesheet" href="https://cdn.anexya.com/ddna/mooseknuckles/prd/styles/styles.css?v=1.6" />
+
+  <!-- Your overrides / layout -->
   <link rel="stylesheet" href="style.css" />
+
+  <script>
+    // set page mode: "authentic" or "not-authentic"
+    const page = "authentic";
+  </script>
+  <script defer src="main.js"></script>
 </head>
 <body>
-
-  <!-- Intro video (plays once) -->
-  <video id="introVideo" class="video-layer" muted playsinline>
-    <source src="assets/intro.mp4" type="video/mp4">
-  </video>
-
-  <!-- Background video (looping) — hidden initially -->
-  <video id="bgVideo" class="video-layer hidden" muted loop playsinline poster="assets/bg_success.jpg">
-    <source src="assets/bg_video.mp4" type="video/mp4">
-  </video>
-
-  <!-- Content overlay shown on top of background video -->
-  <div id="overlay" class="overlay hidden">
-    <h1 id="title">Good news! Your item is 100% authentic.</h1>
-
-    <div class="auth-box">
-      <div class="auth-row"><span class="label">Item:</span><span class="value">3Q Jacket</span></div>
-      <div class="auth-row"><span class="label">Size:</span><span class="value">M</span></div>
-      <div class="auth-row"><span class="label">UID:</span><span class="value">3QJKT-AB123456</span></div>
-      <div class="auth-row"><span class="label">Owner:</span><span class="value">Ansh</span></div>
-    </div>
-
-    <button id="doneBtn" class="btn">Done</button>
+  <!-- Section 1: Loading (intro GIF background) -->
+  <div id="section1" class="container loading-container">
+    <p class="loading-text">CHECKING AUTHENTICITY</p>
   </div>
 
-  <script src="app.js"></script>
+  <!-- Section 2: Result container (hidden initially) -->
+  <div id="section2" class="container geolocation-container animate hide">
+    <!-- background image fallback (keeps same layout as MK) -->
+    <img src="assets/bg_success.jpg" alt="background" class="background-image" />
+
+    <!-- background video (your cleaned mp4) -->
+    <video id="bgVideo" class="video-wrapper" muted loop playsinline poster="assets/bg_success.jpg" preload="auto">
+      <source src="assets/background.mp4" type="video/mp4">
+      <!-- fallback text -->
+    </video>
+
+    <!-- Message (authentic / not-authentic variants will be toggled by JS) -->
+    <p id="retap" class="retap hide">Something went wrong with the validation, please tap again.</p>
+
+    <div class="item-info-wrapper">
+      <div class="item-info">
+        <div class="info-table">
+          <div>
+            <p>Model</p>
+            <p id="info-model">3Q Jacket</p>
+          </div>
+          <div>
+            <p>UID</p>
+            <p id="info-uid">3QW00519</p>
+          </div>
+          <div>
+            <p>Fur Option</p>
+            <p id="info-fur">White Fur</p>
+          </div>
+          <div>
+            <p>Status</p>
+            <p id="info-status">Authentic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- subtle watermark -->
+    <img src="assets/watermark.png" alt="Moose Knuckles" class="mk-watermark" />
+  </div>
 </body>
 </html>
